@@ -81,7 +81,7 @@ def ver_text(sequence1, sequence2):
     if flagca_seq1:
         alert_seq1.write('Error: La secuencia solo debe tener caracteres ACTG')
     else:
-        alert2_seq1.write('OK')
+        alert_seq1.write('OK')
         
     if flagco_seq1:
         alert2_seq1.write('Error: La secuencia debe tener entre 40 y 60 caracteres')
@@ -94,17 +94,27 @@ def ver_text(sequence1, sequence2):
         alert_seq2.write('OK')
         
     if flagco_seq2:
-        alert2_seq2.write('Error: La secuencia debe tener entre 40 y 60 caracteres')
+        #print(alert2_seq2.element.value)
+        pass
     else:
-        alert2_seq2.write('OK')
+        #print(alert2_seq2.element.value)
+        pass
         
     #alerts
     if flagca_seq1 or flagco_seq1 or flagca_seq2 or flagco_seq2:
         local_button.element.disabled = True
         global_button.element.disabled = True
+        slidermin1.element.disabled = True
+        slidermin2.element.disabled = True
+        slidermax1.element.disabled = True
+        slidermax2.element.disabled = True
     else:
         local_button.element.disabled = False
         global_button.element.disabled = False
+        slidermin1.element.disabled = False
+        slidermin2.element.disabled = False
+        slidermax1.element.disabled = False
+        slidermax2.element.disabled = False
         slidermin1.element.max = len(sequence1)
         slidermax1.element.max = len(sequence1)
         slidermax1.element.value = len(sequence1)
@@ -115,14 +125,13 @@ def ver_text(sequence1, sequence2):
 
 
 def global_aling():
-    if verify_caracters():
-        equal = True if len(seq1) == len(seq2) else False
+        equal = True if len(sequence1.element.value) == len(sequence2.element.value) else False
+        
+        
         if equal:
             print(bcolors.OK + "Las secuencias son iguales" + bcolors.RESET)
             # return True
-        return aling(sec_zip, equal)
-    else:
-        return caracters_error
+
 
 
 def local_aling(seq1_init, seq2_init, seq1_final, seq2_final):
@@ -153,7 +162,6 @@ def aling(seq_zip, equal):
 #input_event()
 def input_event(evt=None):
     ver_text(sequence1.element.value.replace(" ", "").upper(), sequence2.element.value.replace(" ", "").upper())
-    print(sequence1.element.value)
     
 sequence1.element.onkeypress = input_event
 sequence2.element.onkeypress = input_event
