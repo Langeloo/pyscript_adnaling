@@ -1,0 +1,4 @@
+#Archivos de IDE´s o Editores de texto
+env/
+/env/
+.vscode/
