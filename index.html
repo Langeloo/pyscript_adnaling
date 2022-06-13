@@ -15,44 +15,65 @@
 
 <body>
     <!--<py-script src="./test.py">  </py-script>-->
-    <h1 class="text-primary">Alineacion</h1>
-    <div class="row">
-        <div class="col-md-5 mx-1">
-            <input class="form-control" type="text" id="first-sequence">
-        </div>
-        <div class="col-md-5 mx-1">
-            <input class="form-control" type="text" id="second-sequence">
+    <!--info alert-->
+    <div class="text-center">
+        <div class="alert alert-info">
+            <strong>¡Bienvenido!</strong> Ingrese las secuencias en los campos de texto.
         </div>
     </div>
-    <div class="row m-4">
+    <h1 class="text-primary text-center">Alineacion</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-5 mx-1">
+            <span class="text-primary">Secuencia 1</span>
+            <input class="form-control" type="text" id="first-sequence">
+            <br>
+            <!--Alert sequence 2-->
+            <div class="text-center">
+                <div class="alert alert-danger">
+                    <p id="alert_seq1"></p>
+                    <p id="alert2_seq1"></p>
+                </div>
+            </div>
+            <span class="multi-range">
+                <input type="range" min="1" value="1" id="lower">
+                <input type="range" min="1" id="upper">
+            </span>
+            <br><br>
+            <label class="first-range-value" for="lower" id="labellower">1</label>
+            <label class="last-range-value" for="upper" id="labelupper">50</label>
+        </div>
+        <div class="col-md-5 mx-1">
+            <span class="text-primary">Secuencia 2</span>
+            <input class="form-control" type="text" id="second-sequence">
+            <br>
+            <!--Alert sequence 2-->
+            <div class="text-center">
+                <div class="alert alert-danger" id="alert_seq2">
+                    <p id="alert_seq2"></p>
+                    <p id="alert2_seq2"></p>
+                </div>
+            </div>
+            <span class="multi-range">
+                <input type="range" min="1" value="1" id="lower2">
+                <input type="range" min="1" id="upper2">
+            </span>
+            <br><br>
+            <label class="first-range-value" for="lower2" id="labellower2">1</label>
+            <label class="last-range-value" for="upper2" id="labelupper2">50</label>
+        </div>
+    </div>
+    <div class="row m-4 justify-content-center">
         <div class="text-center mx-1">
-            <button class="btn btn-primary" id="global_aling" type="submit" pys-onClick="gl_aling">Alineamiento Global</button>
+            <button class="btn btn-primary" id="global_aling" type="submit" pys-onClick="gl_aling">Alineamiento
+                Global</button>
             <button class="btn btn-primary" id="local_aling" pys-onClick="lc_aling">Alineamiento Local</button>
         </div>
     </div>
-    <div>
-        <span class="multi-range">
-            <input type="range" min="1" max="60" value="1" id="lower">
-            <input type="range" min="1" max="60" value="60" id="upper">
-        </span>
-        <br><br><br><br>
-        <label class="first-range-value" for="lower" id="labellower">1</label>
-        <label class="last-range-value" for="upper" id="labelupper">50</label>
-    </div>
-    <br><br><br><br>
-    <div>
-        <span class="multi-range">
-            <input type="range" min="1" max="60" value="1" id="lower2">
-            <input type="range" min="1" max="60" value="60" id="upper2">
-        </span>
-        <br><br><br><br>
-        <label class="first-range-value" for="lower2" id="labellower2">1</label>
-        <label class="last-range-value" for="upper2" id="labelupper2">50</label>
-    </div>
+    <h2 class="text-primary text-center">Resultado</h2>
     <div class="text-xl">
         <p id="result"></p>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -65,4 +86,5 @@
     <script src="slider.js"></script>
     <py-script src="aling.py"></py-script>
 </body>
+
 </html>
