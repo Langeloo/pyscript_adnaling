@@ -18,7 +18,8 @@
     <!--info alert-->
     <div class="text-center">
         <div class="alert alert-info">
-            <strong>¡Bienvenido!</strong> Ingrese las secuencias en los campos de texto.
+            <strong>¡Bienvenido!</strong> Ingrese las secuencias en los campos de texto.<br>
+            <strong>¡Importante!</strong> Para el alineamiento local debe ingresar los valores en los slider.
         </div>
     </div>
     <h1 class="text-primary text-center">Alineacion</h1>
@@ -39,7 +40,9 @@
                 <input type="range" min="1" id="upper" disabled>
             </span>
             <br><br>
+            <label for="lower">Valor minimo: </label>
             <label class="first-range-value" for="lower" id="labellower">1</label>
+            <label for="upper">Valor maximo: </label>
             <label class="last-range-value" for="upper" id="labelupper">50</label>
         </div>
         <div class="col-md-5 mx-1">
@@ -48,7 +51,7 @@
             <br>
             <!--Alert sequence 2-->
             <div class="text-center">
-                <div class="alert alert-danger" id="alert_seq2">
+                <div class="alert alert-danger">
                     <p id="alert_seq2"></p>
                     <p id="alert2_seq2"></p>
                 </div>
@@ -58,7 +61,9 @@
                 <input type="range" min="1" id="upper2" disabled>
             </span>
             <br><br>
+            <label for="lower2">Valor minimo: </label>
             <label class="first-range-value" for="lower2" id="labellower2">1</label>
+            <label for="upper2">Valor maximo: </label>
             <label class="last-range-value" for="upper2" id="labelupper2">50</label>
         </div>
     </div>
@@ -69,9 +74,54 @@
             <button class="btn btn-primary" id="local_aling" pys-onClick="lc_aling" disabled>Alineamiento Local</button>
         </div>
     </div>
-    <h2 class="text-primary text-center">Resultado</h2>
-    <div class="text-xl">
-        <p id="result"></p>
+    <h2 class="text-primary text-center">Resultado Global</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <tr id="table_head">
+            </tr>
+            <tr id="table_body">
+            </tr>
+            <tr id="table_footer">
+            </tr>
+        </table>
+    </div>
+    <br><br>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4 id="global_similarity"></h4>
+        </div>
+        <div class="col-md-4">
+            <h4 id="len1_seq1"></h4>
+        </div>
+        <div class="col-md-4">
+            <h4 id="len1_seq2"></h4>
+        </div>
+    </div>
+    <br><br>
+    <div class="table-responsive" id="local_data">
+    </div>
+    <h2 class="text-primary text-center">Resultado Local</h2>
+    <div class="table-responsive" id="result_local">
+        <table class="table table-bordered text-center">
+            <tr id="table_head_local">
+            </tr>
+            <tr id="table_body_local">
+            </tr>
+            <tr id="table_footer_local">
+            </tr>
+        </table>
+    </div>
+    <br><br>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4 id="local_similarity"></h4>
+        </div>
+        <div class="col-md-4">
+            <h4 id="len2_seq1"></h4>
+        </div>
+        <div class="col-md-4">
+            <h4 id="len2_seq2"></h4>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
