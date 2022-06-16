@@ -99,9 +99,6 @@ def input_event(evt=None):
 sequence1.element.onkeypress = input_event
 sequence2.element.onkeypress = input_event
 
-def aling(secu1, secu2, equal):
-    pass
-
 #button global aling
 def gl_aling(*args, **kws):
     result = []
