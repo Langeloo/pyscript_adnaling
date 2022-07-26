@@ -8,13 +8,6 @@ local_aling_fasta = Element("local_aling_fasta")
 
 def input_event(evt):
     print("input_event upload fasta")
-    document = fasta_1.element.files[0]
-    print(document)
-    #document = evt.target.files[0]
-    #with open(document, "r") as f:
-        #txtread = f.read()
-        #print(document)
-    print(fasta_1.element.value)
     
 fasta_1.element.onchange = input_event
 fasta_2.element.onchange = input_event

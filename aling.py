@@ -43,10 +43,10 @@ def ver_text(sequence1, sequence2):
         if i not in "ACTG":
             flagca_seq2 = True
             
-    if len(sequence1) < 40 or len(sequence1) > 60:
+    if len(sequence1) < 1 or len(sequence1) > 60:
         flagco_seq1 = True
     
-    if len(sequence2) < 40 or len(sequence2) > 60:
+    if len(sequence2) < 1 or len(sequence2) > 60:
         flagco_seq2 = True
         
     if flagca_seq1:
@@ -55,7 +55,7 @@ def ver_text(sequence1, sequence2):
         alert_seq1.write('OK')
         
     if flagco_seq1:
-        alert2_seq1.write('Error: La secuencia debe tener entre 40 y 60 caracteres')
+        alert2_seq1.write('Error: La secuencia debe tener entre 1 y 60 caracteres')
     else:
         alert2_seq1.write('OK')
         
@@ -65,7 +65,7 @@ def ver_text(sequence1, sequence2):
         alert_seq2.write('OK')
         
     if flagco_seq2:
-        alert2_seq2.write('Error: La secuencia debe tener entre 40 y 60 caracteres')
+        alert2_seq2.write('Error: La secuencia debe tener entre 1 y 60 caracteres')
     else:
         alert2_seq2.write('OK')
         
