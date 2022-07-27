@@ -154,18 +154,20 @@
                     <!--Alert sequence 2-->
                     <div class="text-center">
                         <div class="alert alert-success">
-                            <p id="alert_seq1_fasta1"></p>
+                            <p id="alert_seq1_fasta1">Sin Datos</p>
+                            <h5>Secuencia:</h5>
+                            <p id="seq_fasta1">Sin Datos</p>
                         </div>
                     </div>
                     <span class="multi-range">
-                        <input type="range" min="1" value="1" id="lower_fasta1" disabled>
-                        <input type="range" min="1" id="upper_fasta1" disabled>
+                        <input type="range" min="1" max="59" value="1" id="lower_fasta1" disabled>
+                        <input type="range" min="2" max="60" id="upper_fasta1" disabled>
                     </span>
                     <br><br>
                     <label for="lower_fasta1">Valor minimo: </label>
                     <label class="first-range-value" for="lower_fasta1" id="labellower_fasta1">1</label>
                     <label for="upper_fasta1">Valor maximo: </label>
-                    <label class="last-range-value" for="upper_fasta1" id="labelupper_fasta1">50</label>
+                    <label class="last-range-value" for="upper_fasta1" id="labelupper_fasta1">60</label>
                 </div>
                 <div class="col-md-5 mx-1">
                     <h2 class="text-primary text-center">Archivo 2</h2>
@@ -176,30 +178,89 @@
                     <!--Alert sequence 2-->
                     <div class="text-center">
                         <div class="alert alert-success">
-                            <p id="alert_seq2_fasta2"></p>
+                            <p id="alert_seq2_fasta2">Sin Datos</p>
+                            <h5>Secuencia:</h5>
+                            <p id="seq_fasta2">Sin Datos</p>
                         </div>
                     </div>
                     <span class="multi-range">
-                        <input type="range" min="1" value="1" id="lower_fasta2" disabled>
-                        <input type="range" min="1" id="upper_fasta2" disabled>
+                        <input type="range" min="1" max="59" value="1" id="lower_fasta2" disabled>
+                        <input type="range" min="2" max="60" id="upper_fasta2" disabled>
                     </span>
                     <br><br>
                     <label for="lower_fasta2">Valor minimo: </label>
                     <label class="first-range-value" for="lower_fasta2" id="labellower_fasta2">1</label>
                     <label for="upper">Valor maximo: </label>
-                    <label class="last-range-value" for="upper_fasta2" id="labelupper_fasta2">50</label>
+                    <label class="last-range-value" for="upper_fasta2" id="labelupper_fasta2">60</label>
                 </div>
             </div>
             <div class="row m-4 justify-content-center">
                 <div class="text-center mx-1">
-                    <button class="btn btn-primary" id="global_aling_fasta" type="submit" pys-onClick="gl_aling_fasta"
-                        disabled>Alineamiento
+                    <button class="btn btn-primary" id="global_aling_fasta" type="submit" pys-onClick="gl_aling_fasta">
+                        Alineamiento
                         Global</button>
-                    <button class="btn btn-primary" id="local_aling_fasta" pys-onClick="lc_aling_fasta"
-                        disabled>Alineamiento
+                    <button class="btn btn-primary" id="local_aling_fasta" pys-onClick="lc_aling_fasta">
+                        Alineamiento
                         Local</button>
                 </div>
             </div>
+
+
+
+
+            <h2 class="text-primary text-center">Resultado Global</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <tr id="table_head">
+                    </tr>
+                    <tr id="table_body">
+                    </tr>
+                    <tr id="table_footer">
+                    </tr>
+                </table>
+            </div>
+            <br><br>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h4 id="global_similarity"></h4>
+                </div>
+                <div class="col-md-4">
+                    <h4 id="len1_seq1"></h4>
+                </div>
+                <div class="col-md-4">
+                    <h4 id="len1_seq2"></h4>
+                </div>
+            </div>
+            <br><br>
+            <div class="table-responsive" id="local_data">
+            </div>
+            <h2 class="text-primary text-center">Resultado Local</h2>
+            <div class="table-responsive" id="result_local">
+                <table class="table table-bordered text-center">
+                    <tr id="table_head_local">
+                    </tr>
+                    <tr id="table_body_local">
+                    </tr>
+                    <tr id="table_footer_local">
+                    </tr>
+                </table>
+            </div>
+            <br><br>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h4 id="local_similarity"></h4>
+                </div>
+                <div class="col-md-4">
+                    <h4 id="len2_seq1"></h4>
+                </div>
+                <div class="col-md-4">
+                    <h4 id="len2_seq2"></h4>
+                </div>
+            </div>
+
+
+
+
         </div>
     </div>
 
@@ -218,4 +279,5 @@
     <py-script src="aling.py"></py-script>
     <py-script src="fasta.py"></py-script>
 </body>
+
 </html>
